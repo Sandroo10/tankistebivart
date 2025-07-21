@@ -1,11 +1,13 @@
 import React from "react";
-import Bop from "@/components/Hero";
+import Hero from "@/components/Hero";
 import AnimatedGallery from "@/components/AnimatedGallery";
+import About from "@/components/About";
 
 const Home: React.FC = () => {
   return (
     <>
-      <Bop />
+      <Hero />
+      <About />
       <AnimatedGallery />
     </>
   );
