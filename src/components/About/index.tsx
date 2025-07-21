@@ -2,7 +2,7 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <section className="py-16 px-6 sm:px-12 max-w-4xl mx-auto text-center">
+    <section className="py-16 px-6 sm:mt-0 mt-6 sm:px-12 max-w-4xl mx-auto text-center">
       <h2 className="text-3xl sm:text-4xl font-bold text-neutral-200 mb-6">About This Website</h2>
       <p className="text-lg text-gray-300 leading-relaxed">
         This platform was born during a hackathon as a creative experiment to combine education and gamification.

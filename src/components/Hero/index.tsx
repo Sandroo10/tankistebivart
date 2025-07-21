@@ -9,7 +9,7 @@ import Hero4 from "@/assets/maths.jpeg";
 const HeroSection = () => {
     return (
         <section className="mt-10 relative flex flex-col md:flex-row items-center justify-between h-[600px] px-10">
-            <div className="md:w-1/2 text-white text-center md:text-left z-10">
+            <div className="md:w-1/2 text-white text-center md:text-left z-10 mb-5 sm:mb-0">
                 <h1 className="text-5xl font-bold mb-4">Welcome to Our Website</h1>
                 <p className="text-lg mb-6">
                     Discover amazing experiences and breathtaking destinations.

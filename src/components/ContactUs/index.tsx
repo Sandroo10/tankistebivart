@@ -55,8 +55,8 @@ const ContactUs = () => {
               onSubmit={handleSubmit}
               className="flex flex-col sm:flex-row items-center sm:justify-center gap-5 p-6"
             >
-              <div className="flex flex-col justify-start h-full text-lg text-white font-semibold">
-                <h1 className="text-center text-2xl pb-5 sm:pb-10">Write us your feedback</h1>
+              <div className="flex flex-col justify-start h-full sm:text-lg text-white font-semibold">
+                <h1 className="text-center sm:text-2xl pb-5 sm:pb-10">Write us your feedback</h1>
                 
                 <div className="flex flex-col gap-4">
                   <Input
@@ -68,7 +68,7 @@ const ContactUs = () => {
                   />
                   
                   <Textarea
-                    className="w-80 max-h-9 overflow-hidden resize-none"
+                    className="sm:w-80 max-h-9 overflow-hidden resize-none"
                     placeholder="Your Message"
                     required
                     value={formData.message}

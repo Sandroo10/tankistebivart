@@ -30,7 +30,7 @@ const AnimatedGallery = () => {
       >
         <img
           src={img1}
-          className="w-96 h-96 object-cover rounded-lg shadow-md"
+          className="sm:w-96 sm:h-96 h-64 w-64 object-cover rounded-lg shadow-md"
         />
         <p className="text-lg text-gray-700 max-w-md dark:text-white">
     SpaceX Hackathon: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
@@ -47,7 +47,7 @@ const AnimatedGallery = () => {
       >
         <img
           src={img2}
-          className="w-96 h-96 object-cover rounded-lg shadow-md"
+          className="sm:w-96 sm:h-96 h-64 w-64 object-cover rounded-lg shadow-md"
         />
         <p className="text-lg text-gray-700 max-w-md dark:text-white">
     AI Taking Over: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
@@ -65,7 +65,7 @@ const AnimatedGallery = () => {
       >
         <img
           src={img3}
-          className="w-96 h-96 object-cover rounded-lg shadow-md"
+          className="sm:w-96 sm:h-96 h-64 w-64 object-cover rounded-lg shadow-md"
         />
         <p className="text-lg text-gray-700 max-w-md dark:text-white">
     Release of React 19: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
