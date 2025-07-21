@@ -24,7 +24,7 @@ const SolutionComponent: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="w-full flex items-center flex-col max-w-2xl bg-black border border-white/10 p-6 rounded-xl shadow-[0_0_15px_#00BFFF] text-white relative">
       {showAlert && (
         <div
           className={`fixed top-5 left-1/2 transform -translate-x-1/2 z-50 text-white px-6 py-3 rounded-lg shadow-lg ${
@@ -34,20 +34,20 @@ const SolutionComponent: React.FC = () => {
           {alertType === "correct" ? "Correct solution!" : "Incorrect solution!"}
         </div>
       )}
-      <div className="p-4">
-        <textarea
-          className="w-full h-40 p-2 border rounded mb-4 text-white bg-gray-800"
-          placeholder="Type your solution here..."
-          value={solution}
-          onChange={(e) => setSolution(e.target.value)}
-        ></textarea>
-        <button
-          onClick={handleSubmit}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          Submit
-        </button>
-      </div>
+
+      <textarea
+        className="w-full h-40 p-3 mb-4 text-white bg-gray-900 border border-white/10 rounded resize-none focus:outline-none focus:ring-2 focus:ring-[#00BFFF]"
+        placeholder="Type your solution here..."
+        value={solution}
+        onChange={(e) => setSolution(e.target.value)}
+      ></textarea>
+
+      <button
+        onClick={handleSubmit}
+        className="bg-[#00BFFF] hover:bg-blue-400 transition px-6 py-2 rounded-lg font-semibold text-black hover:scale-105 transform"
+      >
+        Submit
+      </button>
     </div>
   );
 };

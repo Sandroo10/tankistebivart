@@ -42,14 +42,14 @@ const ContactUs = () => {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <h1
-            className="text-white font-semibold hover:underline hover:cursor-pointer"
+            className="text-white font-semibold hover:text-[#00BFFF] hover:drop-shadow-[0_0_8px_#00BFFF] transition duration-200"
             onClick={() => setIsOpen(true)}
           >
             Contact Us
           </h1>
         </DialogTrigger>
 
-        <DialogContent className="px-0 max-w-lg sm:max-w-xl">
+        <DialogContent className="px-0">
           <DialogHeader>
             <form
               onSubmit={handleSubmit}
@@ -79,7 +79,7 @@ const ContactUs = () => {
                 </div>
               </div>
               
-              <img src={ContactImage} alt="Contact" className="w-40 sm:w-50" />
+              <img src={ContactImage} alt="Contact" className="w-24 sm:w-32" />
             </form>
           </DialogHeader>
         </DialogContent>
