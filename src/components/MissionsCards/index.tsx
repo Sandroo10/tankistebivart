@@ -24,7 +24,7 @@ const MissionCard: React.FC<MissionCardProps> = ({ mission, title, description, 
       <div className='h-1/2'>
       <p className="text-gray-800 font-semibold mt-1"> <span className="font-bold">{certificate}</span></p>
       <p className="text-gray-800 font-semibold mt-1">{difficulty} </p>
-      <span className="font-bold"> Time to complete: {hours}</span>
+      <span className="font-bold"> Time to complete this task: {hours}</span>
       </div>
     </div>
   );
