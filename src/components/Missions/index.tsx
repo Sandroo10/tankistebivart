@@ -14,7 +14,7 @@ const SkillPage: React.FC = () => {
     <div className="relative flex flex-wrap justify-center gap-6 p-6 mt-9">
 
       {showAlert && (
-        <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-black border border-blue-500 text-[#00BFFF] px-6 py-3 rounded-lg shadow-[0_0_20px_#00BFFF] font-semibold sm:text-lg animate-pulse">
+        <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-gray-950 border border-blue-500 text-[#00BFFF] px-6 py-3 rounded-lg shadow-[0_0_20px_#00BFFF] font-semibold sm:text-lg animate-pulse">
           Mission not yet available, adventurer!
         </div>
       )}

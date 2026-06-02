@@ -17,7 +17,7 @@ const Header: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <header className="h-20 px-4 flex justify-between items-center w-full fixed top-0 left-0 z-50 bg-black shadow-[0_4px_20px_rgba(0,123,255,0.6)]">
+    <header className="h-20 px-4 flex justify-between items-center w-full fixed top-0 left-0 z-50 bg-gray-950 shadow-[0_4px_20px_rgba(0,123,255,0.6)]">
       
       <Link to="/" className="h-full w-[130px] p-1 flex justify-center items-center">
         <img src={Logo} alt="Logo" />
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
               <Menu className="text-white" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="bg-black text-white w-[75%]">
+          <SheetContent side="left" className="bg-gray-950 text-white w-[75%]">
             <div className="flex justify-between items-center mb-6">
               <img src={Logo} alt="Logo" className="w-28" />
             </div>
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
         to="/profile"
         className="hidden sm:flex text-white text-2xl ml-4 hover:opacity-80 items-center bg-white rounded-full mr-1"
       >
-        <img src={Char4} alt="Profile Avatar" className="w-8 h-8 rounded-full m-1" />
+        <img src={Char4} alt="Profile Avatar" className="size-8 rounded-full m-1" />
       </Link>
     </header>
   );

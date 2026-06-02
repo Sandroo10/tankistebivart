@@ -29,25 +29,25 @@ const HeroSection = () => {
                     <img
                         src={Hero1}
                         alt="Travel 1"
-                        className="absolute top-0 left-0 w-[150px] h-[150px] object-cover rounded-lg shadow-lg"
+                        className="absolute top-0 left-0 size-[150px] object-cover rounded-lg shadow-lg"
                     />
                     
                     <img
                         src={Hero2}
                         alt="Travel 2"
-                        className="absolute top-10 right-0 w-[180px] h-[180px] object-cover rounded-lg shadow-lg"
+                        className="absolute top-10 right-0 size-[180px] object-cover rounded-lg shadow-lg"
                     />
                     
                     <img
                         src={Hero3}
                         alt="Travel 3"
-                        className="absolute bottom-0 left-10 w-[200px] h-[200px] object-cover rounded-lg shadow-lg"
+                        className="absolute bottom-0 left-10 size-[200px] object-cover rounded-lg shadow-lg"
                     />
 
                     <img
                         src={Hero4}
                         alt="Travel 4"
-                        className="absolute bottom-10 right-10 w-[170px] h-[170px] object-cover rounded-lg shadow-lg"
+                        className="absolute bottom-10 right-10 size-[170px] object-cover rounded-lg shadow-lg"
                     />
                 </div>
             </div>

@@ -5,25 +5,25 @@ import Char3 from "@/assets/swordsman.png";
 import Char4 from "@/assets/ninja.png";
 import Char5 from "@/assets/wizard.png";
 
+const stats = [
+  { image: Char1, value: 150 },
+  { image: Char2, value: 200 },
+  { image: Char3, value: 100 },
+  { image: Char4, value: 250 },
+  { image: Char5, value: 180 },
+];
+
 const ProfilePage: React.FC = () => {
   const username = "Sandro"; 
   const maxProgress = 300;
-
-  const stats = [
-    { image: Char1, value: 150 },
-    { image: Char2, value: 200 },
-    { image: Char3, value: 100 },
-    { image: Char4, value: 250 },
-    { image: Char5, value: 180 },
-  ];
 
   const topStat = stats.reduce((prev, curr) =>
     curr.value > prev.value ? curr : prev
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
-      <img src={topStat.image} alt="Profile" className="w-[200px] h-[200px] object-cover rounded-lg" />
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-950 text-white">
+      <img src={topStat.image} alt="Profile" className="size-[200px] object-cover rounded-lg" />
       <h1 className="text-3xl font-bold mt-2">{username}</h1>
       
       <div className="mt-6 w-1/2 space-y-4">

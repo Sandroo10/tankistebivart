@@ -24,7 +24,7 @@ const SolutionComponent: React.FC = () => {
   };
 
   return (
-    <div className="w-full flex items-center flex-col max-w-2xl bg-black border border-white/10 p-6 rounded-xl shadow-[0_0_15px_#00BFFF] text-white relative">
+    <div className="w-full flex items-center flex-col max-w-2xl bg-gray-950 border border-white/10 p-6 rounded-xl shadow-[0_0_15px_#00BFFF] text-white relative">
       {showAlert && (
         <div
           className={`fixed top-5 left-1/2 transform -translate-x-1/2 z-50 text-white px-6 py-3 rounded-lg shadow-lg ${

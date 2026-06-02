@@ -4,20 +4,20 @@ import img1 from "@/assets/spacex.webp";
 import img2 from "@/assets/AI.webp";
 import img3 from "@/assets/react19.png";
 
+const slideLeft = {
+  hidden: { opacity: 0, x: -150 },
+  visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+};
+
+const slideRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+};
+
 const AnimatedGallery = () => {
   const [ref1, inView1] = useInView({ threshold: 0.2 });
   const [ref2, inView2] = useInView({ threshold: 0.2 });
   const [ref3, inView3] = useInView({ threshold: 0.2 });
-
-  const slideLeft = {
-    hidden: { opacity: 0, x: -150 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-  };
-
-  const slideRight = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-  };
 
   return (
     <div className="space-y-16 mt-16">
