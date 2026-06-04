@@ -1,101 +1,85 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
-
 import ContactUs from "@/components/ContactUs";
-import Char4 from "@/assets/ninja.png";
+import Char4 from "@/assets/wizard.png";
 import Logo from "@/assets/EduLevelingLogo.png";
+
+const navItems = [
+  { to: "/", label: "Home" },
+  { to: "/missions", label: "Missions" },
+  { to: "/about", label: "About" }
+];
+
+const navClass = ({ isActive }: { isActive: boolean }) =>
+  `rounded-full px-4 py-2 text-sm font-bold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 motion-reduce:transition-none ${
+    isActive ? "bg-cyan-300 text-slate-950" : "text-slate-200 hover:bg-white/10"
+  }`;
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     setOpen(false);
   }, [location.pathname]);
 
   return (
-    <header className="h-20 px-4 flex justify-between items-center w-full fixed top-0 left-0 z-50 bg-gray-950 shadow-[0_4px_20px_rgba(0,123,255,0.6)]">
-      
-      <Link to="/" className="h-full w-[130px] p-1 flex justify-center items-center">
-        <img src={Logo} alt="Logo" />
-      </Link>
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 md:px-6">
+        <Link to="/" className="flex items-center gap-3 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300" aria-label="Tankistebi home">
+          <img src={Logo} alt="" className="h-12 w-auto" />
+          <span className="hidden text-lg font-black text-white sm:block">Tankistebi</span>
+        </Link>
 
-      <nav className="hidden lg:flex">
-        <ul className="flex space-x-6 mr-6">
-          <li>
-            <Link
-              to="/"
-              className="text-white font-semibold hover:text-[#00BFFF] hover:drop-shadow-[0_0_8px_#00BFFF] transition duration-200"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/products"
-              className="text-white font-semibold hover:text-[#00BFFF] hover:drop-shadow-[0_0_8px_#00BFFF] transition duration-200"
-            >
-              Missions
-            </Link>
-          </li>
-          <li>
-            <ContactUs />
-          </li>
-          <li>
-            <Link
-              to="/about"
-              className="text-white font-semibold hover:text-[#00BFFF] hover:drop-shadow-[0_0_8px_#00BFFF] transition duration-200"
-            >
-              About us
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <nav className="hidden items-center gap-2 md:flex" aria-label="Primary navigation">
+          {navItems.map((item) => (
+            <NavLink key={item.to} to={item.to} className={navClass} end={item.to === "/"}>
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
 
-      
-      <div className="sm:hidden">
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon">
-              <Menu className="text-white" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="bg-gray-950 text-white w-[75%]">
-            <div className="flex justify-between items-center mb-6">
-              <img src={Logo} alt="Logo" className="w-28" />
-            </div>
-            <nav>
-              <ul className="flex flex-col space-y-6 text-lg font-semibold ml-5">
-                <SheetClose asChild>
-                  <Link to="/">Home</Link>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Link to="/products">Missions</Link>
-                </SheetClose>
-                <SheetClose asChild>
-                  <ContactUs />
-                </SheetClose>
-                <SheetClose asChild>
-                  <Link to="/about">About us</Link>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Link to="/profile">Profile</Link>
-                </SheetClose>
-              </ul>
-            </nav>
-          </SheetContent>
-        </Sheet>
+        <div className="flex items-center gap-3">
+          <Link to="/profile" className="hidden rounded-full border border-cyan-300/30 bg-white/10 p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 sm:block" aria-label="Open profile">
+            <img src={Char4} alt="" className="size-9 rounded-full object-cover" />
+          </Link>
+
+          <div className="md:hidden">
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" aria-label="Open navigation menu">
+                  <Menu className="text-white" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[82%] border-white/10 bg-slate-950 text-white">
+                <Link to="/" className="mb-8 flex items-center gap-3">
+                  <img src={Logo} alt="" className="h-12 w-auto" />
+                  <span className="font-black">Tankistebi</span>
+                </Link>
+                <nav aria-label="Mobile navigation">
+                  <ul className="space-y-3">
+                    {navItems.map((item) => (
+                      <li key={item.to}>
+                        <SheetClose asChild>
+                          <NavLink to={item.to} end={item.to === "/"} className={navClass}>
+                            {item.label}
+                          </NavLink>
+                        </SheetClose>
+                      </li>
+                    ))}
+                    <li>
+                      <ContactUs />
+                    </li>
+                  </ul>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
       </div>
-
-      <Link
-        to="/profile"
-        className="hidden sm:flex text-white text-2xl ml-4 hover:opacity-80 items-center bg-white rounded-full mr-1"
-      >
-        <img src={Char4} alt="Profile Avatar" className="size-8 rounded-full m-1" />
-      </Link>
     </header>
   );
 };

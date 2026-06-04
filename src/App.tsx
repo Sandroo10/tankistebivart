@@ -1,13 +1,12 @@
 import React from "react";
-import { Route, Routes as Router } from "react-router-dom"; 
+import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Home from "@/components/HomePage";
 import Missions from "@/components/Missions";
 import Profile from "@/components/Profile";
-import MathPage from "./components/MissionPage";
-import ImageCard from "./components/MissionPageCollab";
-import AboutUs from "@/components/AboutUs"
-
+import MissionWorkspace from "@/components/MissionPage";
+import AboutUs from "@/components/AboutUs";
+import { missions } from "@/lib/missions";
 
 const profiles = [
   {
@@ -42,20 +41,19 @@ const profiles = [
   }
 ];
 
-const App: React.FC = () => {
+const App: React.FC = () => (
+  <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="missions" element={<Missions />} />
+      <Route path="missions/:missionId" element={<MissionWorkspace />} />
+      <Route path="products" element={<Navigate to="/missions" replace />} />
+      <Route path="profile" element={<Profile />} />
+      <Route path="mathtask" element={<Navigate to={`/missions/${missions[0].id}`} replace />} />
+      <Route path="collab" element={<Navigate to="/missions" replace />} />
+      <Route path="about" element={<AboutUs profiles={profiles} />} />
+    </Route>
+  </Routes>
+);
 
-  return (
-    <Router>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />}></Route>
-        <Route path="/products" element={<Missions />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/mathtask" element={<MathPage />}></Route>
-        <Route path="/collab" element={<ImageCard />}></Route>
-        <Route path="/about" element={<AboutUs profiles={profiles} />}></Route>
-      </Route>
-    </Router>
-  )
-}
-
-export default App
+export default App;
